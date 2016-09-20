@@ -1,0 +1,52 @@
+package com.usaco.beads;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+/*
+ID: karthik71
+LANG: JAVA
+TASK: beads
+*/
+
+public class beads {
+	
+	public static char getAhead(char c,char dir)
+	{
+		
+		
+	}
+
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new FileReader("D:/USACO_Learnings/Section1.1/IO/beads/beads.in"));
+
+		PrintWriter out = new PrintWriter(new FileWriter("D:/USACO_Learnings/Section1.1/IO/beads/beads.out"));
+		
+		int noOfCharacter = Integer.parseInt(br.readLine());
+		
+		int max=0;
+		
+		String beads = br.readLine();
+		
+		for(int i=0, j=beads.length()-1;i<j;i++,j++)
+		{
+			
+			char Lchar = beads.charAt(i);
+			char Rchar = beads.charAt(j);
+			char leftW,rightW;
+			
+			int leftCount=0,rightCount=0;
+			
+			
+		}
+		
+		
+
+	}
+
+}

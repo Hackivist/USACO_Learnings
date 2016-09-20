@@ -1,0 +1,146 @@
+package com.usaco.beads;
+
+/*
+ID: karthik71
+LANG: JAVA
+TASK: beads
+*/
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+
+public class beads {
+	
+	public static char getAheadLeft(String str, int n)
+	{
+		int len = str.length();
+		int i=0,index =n;
+		while(i<len)
+		{
+			if(index<0)
+			{
+				index+=len;
+			}
+			
+			if(str.charAt(index)!='w')
+			{
+				return str.charAt(index);
+			}
+			index--;
+			
+			i++;
+		}
+		
+		return 'r';
+		
+	}
+	
+	public static char getAheadRight(String str, int n)
+	{
+		
+		int len = str.length();
+		int i=0,index =n;
+		while(i<len)
+		{
+			if(index>len-1)
+			{
+				index=0;
+			}
+			
+			if(str.charAt(index)!='w')
+			{
+				return str.charAt(index);
+			}
+			index++;
+			
+			i++;
+		}
+		
+		return 'r';
+		
+	}
+
+	public static void main(String[] args) throws IOException {
+	/*	
+		BufferedReader br = new BufferedReader(new FileReader("beads.in"));
+
+		PrintWriter out = new PrintWriter(new FileWriter("beads.out"));
+		*/
+		BufferedReader br = new BufferedReader(new FileReader("D:/USACO_Learnings/Section1.1/IO/beads/beads.in"));
+
+		PrintWriter out = new PrintWriter(new FileWriter("D:/USACO_Learnings/Section1.1/IO/beads/beads.out"));
+		
+		
+		
+		int noOfCharacter = Integer.parseInt(br.readLine());
+		
+		
+		String beads = br.readLine();
+		
+		int len = beads.length(),max =0; 
+		
+		
+		for(int i=0;i<len-1;i++)
+		{
+			int j=((i+1)%len),lCount=0,rCount=0,left,right;
+			char leftChar, rightChar;
+			
+			leftChar = getAheadLeft(beads,i);
+			rightChar = getAheadRight(beads, j);
+			
+			left=i;
+			right = j;
+			
+			boolean lflag = true,rflag=true;
+			
+			while(lflag||rflag)
+			{
+				
+				if(beads.charAt(left)==leftChar||beads.charAt(left)=='w')
+				{
+					lCount++;
+					left--;
+				}
+				else
+				{
+					lflag = false;
+				}
+				
+				if(beads.charAt(right)==rightChar||beads.charAt(right)=='w')
+				{
+					rCount++;
+					right++;
+				}
+				else
+				{
+					rflag = false;
+				}
+				
+				if(left<0)
+				{
+					left+=len;
+				}
+				
+				if(right>len-1)
+				{
+					right=0;
+				}
+				
+			}
+			max = Math.max(max,lCount+rCount);
+			
+		}
+		
+		out.print(max+"\n");
+		br.close();
+		out.close();
+		
+	}
+
+}
