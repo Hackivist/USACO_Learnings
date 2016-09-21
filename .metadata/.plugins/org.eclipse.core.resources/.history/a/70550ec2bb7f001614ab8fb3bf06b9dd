@@ -92,8 +92,7 @@ public class namenum {
 
 			if(result!=-1)
 			{
-				res=name;
-				out.println(res);
+				out.println(name);
 			}
 			return;
 		}
@@ -109,11 +108,11 @@ public class namenum {
 
 	public static void main(String[] args) throws IOException {
 
-/*		
-		BufferedReader br = new BufferedReader(new FileReader("namenum.in"));
-		PrintWriter out = new PrintWriter(new FileWriter("namenum.out"));
-		BufferedReader brdict = new BufferedReader(new FileReader("dict.txt"));*/
 		
+	/*	BufferedReader br = new BufferedReader(new FileReader("namenum.in"));
+		PrintWriter out = new PrintWriter(new FileWriter("namenum.out"));
+		BufferedReader brdict = new BufferedReader(new FileReader("dict.txt"));
+		*/
 		
 
 		BufferedReader br = new BufferedReader(new FileReader("D:/USACO_Learnings/Section1.2/IO/namenum/namenum.in"));

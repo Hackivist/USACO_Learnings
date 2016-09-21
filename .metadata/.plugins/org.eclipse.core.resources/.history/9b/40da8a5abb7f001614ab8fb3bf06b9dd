@@ -1,5 +1,3 @@
-package com.usaco.namenum;
-
 /*
 ID: karthik71
 LANG: JAVA
@@ -92,35 +90,37 @@ public class namenum {
 
 			if(result!=-1)
 			{
-				res=name;
-				out.println(res);
+				res = name;
 			}
 			return;
 		}
 
-		char[] charset=getCharSet(input.charAt(index));
-
-		for(int i=0;i<charset.length;i++)
+		if(res==null)
 		{
-			getNameNum(input, name+Character.toString(charset[i]),index+1, len,out);
+			char[] charset=getCharSet(input.charAt(index));
 
+			for(int i=0;i<charset.length;i++)
+			{
+				getNameNum(input, name+Character.toString(charset[i]),index+1, len,out);
+
+			}
 		}
 	}
 
 	public static void main(String[] args) throws IOException {
 
-/*		
+		
 		BufferedReader br = new BufferedReader(new FileReader("namenum.in"));
 		PrintWriter out = new PrintWriter(new FileWriter("namenum.out"));
-		BufferedReader brdict = new BufferedReader(new FileReader("dict.txt"));*/
+		BufferedReader brdict = new BufferedReader(new FileReader("dict.txt"));
 		
 		
 
-		BufferedReader br = new BufferedReader(new FileReader("D:/USACO_Learnings/Section1.2/IO/namenum/namenum.in"));
+	/*	BufferedReader br = new BufferedReader(new FileReader("D:/USACO_Learnings/Section1.2/IO/namenum/namenum.in"));
 
 		BufferedReader brdict = new BufferedReader(new FileReader("D:/USACO_Learnings/Section1.2/IO/namenum/dict.txt"));
 
-		PrintWriter out = new PrintWriter(new FileWriter("D:/USACO_Learnings/Section1.2/IO/namenum/namenum.out"));
+		PrintWriter out = new PrintWriter(new FileWriter("D:/USACO_Learnings/Section1.2/IO/namenum/namenum.out"));*/
 
 		String input = br.readLine(); //Input number
 
@@ -137,9 +137,14 @@ public class namenum {
 
 		dict = list.toArray(new String[list.size()]); //Converting back to array for binary search
 		
-		getNameNum(input,"",0, len,out);
+		getNameNum(input,"",0, len);
 		
-		if(res ==null)
+		
+		if(res!=null)
+		{
+			out.println(res);
+		}
+		else
 		{
 			out.println("NONE");
 		}
