@@ -85,7 +85,8 @@ public class milk2 {
 		
 		BufferedReader br = new BufferedReader(new FileReader("D:/USACO_Learnings/Section1.2/IO/milk2/milk2.in"));
 
-		PrintWriter out = new PrintWriter(new FileWriter("D:/USACO_Learnings/Section1.2/IO/milk2/milk2.out"));		
+		PrintWriter out = new PrintWriter(new FileWriter("D:/USACO_Learnings/Section1.2/IO/milk2/milk2.out"));	
+		
 		int n = Integer.parseInt(br.readLine());
 		
 		int[][] milking = new int[n][2];
