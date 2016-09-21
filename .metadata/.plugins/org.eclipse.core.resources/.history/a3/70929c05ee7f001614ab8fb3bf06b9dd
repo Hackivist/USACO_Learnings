@@ -1,0 +1,30 @@
+package com.usaco.dualpal;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+/*
+ID: karthik71
+LANG: JAVA
+TASK: dualpal
+ */
+
+public class dualpal {
+
+	public static void main(String[] args) {
+		
+		
+		BufferedReader br = new BufferedReader(new FileReader("dualpal.in"));
+
+		PrintWriter out = new PrintWriter(new FileWriter("dualpal.out"));
+
+/*		BufferedReader br = new BufferedReader(new FileReader("D:/USACO_Learnings/Section1.2/IO/dualpal/dualpal.in"));
+
+		PrintWriter out = new PrintWriter(new FileWriter("D:/USACO_Learnings/Section1.2/IO/dualpal/dualpal.out"));
+		*/
+		
+
+	}
+
+}
