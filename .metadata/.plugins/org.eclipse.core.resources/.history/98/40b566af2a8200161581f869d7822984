@@ -89,15 +89,17 @@ public class milk {
 		
 		for(int i=0;i<m&&n>0;i++)
 		{
-			int taken = farmers[i].getCapacity();
+			int taken = 0;
 			
-			if(taken>n)
+			if(farmers[i].getCapacity()>n)
 			{
 				taken = n;
 			}
-			
-				n-=taken;
-				sum+=taken*farmers[i].getPrice();
+			else
+			{
+				n-=farmers[i].getCapacity();
+				sum+=farmers[i].getCapacity()*farmers[i].getPrice();
+			}
 			
 		}
 		

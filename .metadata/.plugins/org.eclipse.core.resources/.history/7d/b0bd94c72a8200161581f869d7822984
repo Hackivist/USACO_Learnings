@@ -99,6 +99,7 @@ public class milk {
 				n-=taken;
 				sum+=taken*farmers[i].getPrice();
 			
+			
 		}
 		
 		out.println(sum);

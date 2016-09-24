@@ -95,9 +95,11 @@ public class milk {
 			{
 				taken = n;
 			}
-			
-				n-=taken;
-				sum+=taken*farmers[i].getPrice();
+			else
+			{
+				n-=farmers[i].getCapacity();
+				sum+=farmers[i].getCapacity()*farmers[i].getPrice();
+			}
 			
 		}
 		
