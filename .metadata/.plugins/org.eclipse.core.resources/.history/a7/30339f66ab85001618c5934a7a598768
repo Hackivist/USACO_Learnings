@@ -1,0 +1,87 @@
+package com.usaco.crypt1;
+
+/*
+ID: karthik71
+LANG: JAVA
+TASK: crypt1
+ */
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class crypt1 {
+
+	static boolean[] num= new boolean[10];
+
+	public static boolean checkValidity(int n,int l)
+	{
+		int len=0;
+
+		while(n>0){
+
+			if(!(num[n%10])||len>l-1){
+				return false;
+			}
+
+			n/=10;
+			len++;
+		}
+		return true;
+
+	}
+
+	public static void main(String[] args) throws IOException {
+
+		/*		BufferedReader br = new BufferedReader(new FileReader("crypt1.in"));
+
+		PrintWriter out = new PrintWriter(new FileWriter("crypt1.out"));*/
+
+		BufferedReader br = new BufferedReader(new FileReader("D:/USACO_Learnings/Section1.3/IO/crypt1/crypt1.in"));
+
+		PrintWriter out = new PrintWriter(new FileWriter("D:/USACO_Learnings/Section1.3/IO/crypt1/crypt1.out"));
+
+		int count = 0;
+
+		String _ignore = br.readLine();
+
+		String[] strarr = br.readLine().split(" ");
+
+		for(String str: strarr)
+		{
+			num[Integer.parseInt(str)]= true;
+		}
+
+		for(int i=100;i<1000;i++)
+		{
+			for(int j=10;j<99;j++)
+			{
+				boolean res1,res2,res3;
+
+				if(checkValidity(i,3)&&checkValidity(j,2))
+				{
+
+
+					res1 =  checkValidity((j%10)*i,3);
+					res2 = checkValidity((j/10)*i,3);
+					res3 = checkValidity(i*j,4);
+
+					if(res1&&res2&&res3)
+					{
+						System.out.println((j%10)*i);
+						count++;
+					}
+				}
+			}
+		}
+
+		out.println(count);
+
+		br.close();
+		out.close();
+
+	}
+
+}
