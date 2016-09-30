@@ -1,0 +1,10 @@
+package com.usaco.combo;
+
+public class combo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

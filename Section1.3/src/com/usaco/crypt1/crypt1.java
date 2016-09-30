@@ -1,3 +1,5 @@
+package com.usaco.crypt1;
+
 /*
 ID: karthik71
 LANG: JAVA
