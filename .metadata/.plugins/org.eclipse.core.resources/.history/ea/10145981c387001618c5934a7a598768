@@ -17,7 +17,9 @@ public class combo {
 
 	public static boolean checkValidJohnMaster(int[] arr,int n,int index) {
 
-		int remj = (n+arr[index]) % max;
+		int remj = (n-arr[index]) % max;
+		
+		System.out.println(remj);
 
 		if (remj < 0)
 		{

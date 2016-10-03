@@ -17,7 +17,7 @@ public class combo {
 
 	public static boolean checkValidJohnMaster(int[] arr,int n,int index) {
 
-		int remj = (n+arr[index]) % max;
+		int remj = (n-arr[index]) % max;
 
 		if (remj < 0)
 		{
@@ -35,7 +35,7 @@ public class combo {
 
 	public static void generatePossiblePins(int[] jarr,int[] marr) {
 
-		int[] larr = {49};
+		int[] larr = {49,50};
 		for(int value: larr)
 		{
 			System.out.println(checkValidJohnMaster(jarr,value,0));
